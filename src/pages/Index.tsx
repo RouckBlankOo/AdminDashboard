@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Sidebar } from '../components/Sidebar';
-import { Dashboard } from '../components/Dashboard';
-import { PropertiesPage } from '../components/PropertiesPage';
-import { SettingsPage } from '../components/SettingsPage';
-import { PropertyForm } from '../components/PropertyForm';
-import { Menu, Bell, User } from 'lucide-react';
+import React, { useState } from "react";
+import { Sidebar } from "../components/Sidebar";
+import { Dashboard } from "../components/Dashboard";
+import { PropertiesPage } from "../components/PropertiesPage";
+import { SettingsPage } from "../components/SettingsPage";
+import { PropertyForm } from "../components/PropertyForm";
+import { Menu, Bell, User } from "lucide-react";
 
 const Index = () => {
-  const [currentPage, setCurrentPage] = useState('dashboard');
+  const [currentPage, setCurrentPage] = useState("dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [properties, setProperties] = useState([
     {
@@ -20,12 +20,13 @@ const Index = () => {
       beds: 3,
       baths: 4,
       sqft: 4530,
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=800&q=80",
       dateAdded: "2024-06-13",
       featured: true,
       description: "Magnifique villa moderne avec vue panoramique",
       tags: ["À Vendre", "En Vedette", "Tendance"],
-      isRental: false
+      isRental: false,
     },
     {
       id: 2,
@@ -35,43 +36,44 @@ const Index = () => {
       type: "Commerce",
       status: "À Louer",
       sqft: 950,
-      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80",
       dateAdded: "2024-06-12",
       featured: false,
       description: "Espace commercial idéal pour restaurant",
       tags: ["À Louer"],
-      isRental: true
-    }
+      isRental: true,
+    },
   ]);
 
   const [showPropertyForm, setShowPropertyForm] = useState(false);
   const [editingProperty, setEditingProperty] = useState(null);
 
-  console.log('Current page:', currentPage);
-  console.log('Properties count:', properties.length);
+  console.log("Current page:", currentPage);
+  console.log("Properties count:", properties.length);
 
   const getPageTitle = () => {
     switch (currentPage) {
-      case 'dashboard':
-        return 'Tableau de Bord';
-      case 'properties':
-        return 'Gestion des Propriétés';
-      case 'settings':
-        return 'Paramètres';
+      case "dashboard":
+        return "Tableau de Bord";
+      case "properties":
+        return "Gestion des Propriétés";
+      case "settings":
+        return "Paramètres";
       default:
-        return 'Dashboard';
+        return "Dashboard";
     }
   };
 
   return (
     <div className="h-screen w-full bg-gradient-to-br from-gray-50 to-gray-100 flex overflow-hidden">
-      <Sidebar 
+      <Sidebar
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
       />
-      
+
       <div className="flex-1 flex flex-col w-full min-w-0">
         <header className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-40 flex-shrink-0 w-full">
           <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -85,7 +87,7 @@ const Index = () => {
                 >
                   <Menu className="h-6 w-6" />
                 </button>
-                
+
                 <div className="flex flex-col min-w-0 flex-1">
                   <h1 className="text-xl font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent lg:hidden truncate">
                     Say Allo Admin
@@ -113,7 +115,10 @@ const Index = () => {
                     <p className="text-sm font-medium text-gray-900">Admin</p>
                     <p className="text-xs text-gray-500">Administrateur</p>
                   </div>
-                  <button className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-red-600 to-red-700 rounded-full text-white hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-md">
+                  <button
+                    onClick={() => setCurrentPage("settings")}
+                    className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-red-600 to-red-700 rounded-full text-white hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-md"
+                  >
                     <User className="h-4 w-4" />
                   </button>
                 </div>
@@ -121,11 +126,11 @@ const Index = () => {
             </div>
           </div>
         </header>
-        
+
         <main className="flex-1 overflow-auto w-full">
           <div className="h-full w-full">
             {showPropertyForm && (
-              <PropertyForm 
+              <PropertyForm
                 properties={properties}
                 setProperties={setProperties}
                 showPropertyForm={showPropertyForm}
@@ -134,17 +139,19 @@ const Index = () => {
                 setEditingProperty={setEditingProperty}
               />
             )}
-            
-            {currentPage === 'dashboard' && <Dashboard properties={properties} />}
-            {currentPage === 'properties' && (
-              <PropertiesPage 
+
+            {currentPage === "dashboard" && (
+              <Dashboard properties={properties} />
+            )}
+            {currentPage === "properties" && (
+              <PropertiesPage
                 properties={properties}
                 setProperties={setProperties}
                 setShowPropertyForm={setShowPropertyForm}
                 setEditingProperty={setEditingProperty}
               />
             )}
-            {currentPage === 'settings' && <SettingsPage />}
+            {currentPage === "settings" && <SettingsPage />}
           </div>
         </main>
       </div>
