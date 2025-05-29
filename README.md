@@ -1,8 +1,8 @@
-# Welcome to your Lovable project
+# Welcome to Your Admin Dashboard
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/b140d13d-8f30-4ec5-b20d-ff0bb0ef1c7d
+**URL**: https://Admin.dev/projects/b140d13d-8f30-4ec5-b20d-ff0bb0ef1c7d
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b140d13d-8f30-4ec5-b20d-ff0bb0ef1c7d) and start prompting.
+Simply visit the [Lovable Project](https://Admin.dev/projects/b140d13d-8f30-4ec5-b20d-ff0bb0ef1c7d) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -24,10 +24,10 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone AdminDashboard
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd AdminDashboard
 
 # Step 3: Install the necessary dependencies.
 npm i
@@ -62,7 +62,7 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/b140d13d-8f30-4ec5-b20d-ff0bb0ef1c7d) and click on Share -> Publish.
+Simply open [Lovable](https://Admin.dev/projects/b140d13d-8f30-4ec5-b20d-ff0bb0ef1c7d) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 
@@ -70,4 +70,4 @@ Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Read more here: [Setting up a custom domain](https://docs.Admin.dev/tips-tricks/custom-domain#step-by-step-guide)
